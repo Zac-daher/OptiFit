@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Workout Generator</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #f2f4f7;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      margin-top: 50px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 25px;
+      width: 100%;
+      padding: 12px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+
+    .output {
+      margin-top: 30px;
+      background: #f9f9f9;
+      border-left: 4px solid #0077cc;
+      padding: 15px;
+      white-space: pre-wrap;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AI Workout Generator</h1>
+
+    <form method="POST">
+      <label>HRV</label>
+      <input type="text" name="hrv" value="{{ defaults.hrv }}" required>
+
+      <label>Body Battery</label>
+      <input type="text" name="battery" value="{{ defaults.battery }}" required>
+
+      <label>Stress</label>
+      <input type="text" name="stress" value="{{ defaults.stress }}" required>
+
+      <label>Sleep (hours)</label>
+      <input type="text" name="sleep" value="{{ defaults.sleep }}" required>
+
+      <label>Fitness Goal</label>
+      <input type="text" name="goal" value="{{ defaults.goal }}" required>
+
+      <label>Available Equipment</label>
+      <input type="text" name="equipment" value="{{ defaults.equipment }}" required>
+
+      <button type="submit">Generate Workout</button>
+    </form>
+
+    {% if workout %}
+      <div class="output">
+        <h2>Generated Workout:</h2>
+        <p>{{ workout }}</p>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>

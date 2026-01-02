@@ -1,5 +1,5 @@
 This project is shell code for the fitness application I am developing as a personal project. 
-I am currently using a temporary tunneling service to host the website, do not have a website hosted yet.
+I am currently using a temporary tunneling service to host the website, do not have a perminant website hosted yet.
 Will explain details of project over phone call!
 
 Copyright (c) 2026 Zachary Daher
